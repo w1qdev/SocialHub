@@ -1,0 +1,40 @@
+### Users API Checking
+GET http://localhost:3000/api/user/ HTTP/1.1
+content-type: application/json
+
+###
+GET http://localhost:3000/api/user/daniilzemla@gmail.com HTTP/1.1
+content-type: application/json
+
+###
+PUT http://localhost:3000/api/user/daniilzemla@gmail.com HTTP/1.1
+content-type: application/json
+
+{
+    "email": "werwerwre@gmail.com",
+    "bio": "i'mrwerwerw"
+}
+
+###
+PUT http://localhost:3000/api/user/password-change/daniilzemla@gmail.com HTTP/1.1
+content-type: application/json
+
+{
+    "newPassword": "ffsfsfsd"
+}
+
+###
+DELETE http://localhost:3000/api/user/daniilzemla@gmail.com HTTP/1.1
+content-type: application/json
+
+### 
+POST http://localhost:3000/api/user/ HTTP/1.1
+content-type: application/json
+
+{
+    "username": "Daniel",
+    "email": "daniilzemla2@gmail.com",
+    "password": "somePadafdd22fdfd",
+    "avatar": "",
+    "bio": ""
+}

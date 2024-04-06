@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es2022",                    /* Уровень целевого ECMAScript */
+    "module": "CommonJS",                  /* Формат модулей */
+    "strict": true,                        /* Включает все строгие проверки */
+    "esModuleInterop": true,               /* Разрешает импортировать модули CommonJS как ES6-модули */
+    "skipLibCheck": true,                  /* Пропуск проверки типов библиотек */
+    "forceConsistentCasingInFileNames": true, /* Гарантирует согласованный регистр имен файлов */
+    "outDir": "dist"
+  },
+  "include": ["src/**/*.ts"],              /* Путь к файлам, которые должны компилироваться */
+  "exclude": ["node_modules"]               /* Пути, которые нужно исключить из компиляции */
+}

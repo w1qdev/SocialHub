@@ -1,0 +1,58 @@
+.chat__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 85px;
+    padding: 0px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.2s linear;
+
+    &:hover {
+        background-color: #eaf3ff;
+    }
+
+    &-avatar {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid #838bff;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &-content {
+        width: auto;
+
+        &-name {
+            max-width: 260px;
+            font-weight: 800;
+            font-size: 22px;
+            color: #343434;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &-last-message {
+            max-width: 260px;
+            font-size: 16px;
+            color: #343434;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+}

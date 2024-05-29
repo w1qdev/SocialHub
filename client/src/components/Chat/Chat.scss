@@ -1,0 +1,9 @@
+.chat {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: url('../../assets/chat-background/light-default-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

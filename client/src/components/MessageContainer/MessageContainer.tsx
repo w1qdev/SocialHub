@@ -4,11 +4,13 @@ import './MessageContainer.scss';
 interface MessageContainerProps {
     userId: string;
     text: string;
+    time: string;
 }
 
 export default function MessageContainer({
     userId,
     text,
+    time,
 }: MessageContainerProps) {
     return (
         <div
@@ -23,7 +25,7 @@ export default function MessageContainer({
                 className="message-container__item"
             >
                 <div className="message-container__text">{text}</div>
-                <div className="message-container__time">18:45</div>
+                <div className="message-container__time">{time}</div>
             </motion.div>
         </div>
     );

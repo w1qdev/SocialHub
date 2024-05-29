@@ -26,6 +26,7 @@ export default function ChatMessagesContainer({
                       <MessageContainer
                           key={message.id}
                           text={message.text}
+                          time={message.time}
                           userId={'1'}
                       />
                   ))

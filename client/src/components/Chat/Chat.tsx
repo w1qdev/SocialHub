@@ -3,11 +3,12 @@ import ChatMessagesContainer from '../ChatMessagesContainer/ChatMessagesContaine
 import ChatInputContainer from '../ChatInputContainer/ChatInputContainer';
 import ChatHeader from '../ChatHeader/ChatHeader';
 import React, { useState } from 'react';
+import { getCurrentTime, generateUniqueId } from '@/utils/helpers';
 
 export interface Message {
     id: string | number;
     text: string;
-    time?: string;
+    time: string;
 }
 
 export default function Chat() {
@@ -21,8 +22,17 @@ export default function Chat() {
     const onSubmitMessage = (e: React.FormEvent<SubmitEvent>) => {
         e.preventDefault();
 
-        setMessages(prev => [...prev, { id: 1, text: messageValue }]);
-        setMessageValue('');
+        if (messageValue) {
+            setMessages(prev => [
+                ...prev,
+                {
+                    id: generateUniqueId(),
+                    text: messageValue,
+                    time: getCurrentTime(),
+                },
+            ]);
+            setMessageValue('');
+        }
     };
 
     return (

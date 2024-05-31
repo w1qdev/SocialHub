@@ -1,8 +1,8 @@
 import { DefaultIconTypes } from './types/DefaultIconTypes';
 
 export default function SettingsIcon({
-    width = '25px',
-    height = '25px',
+    width = '100%',
+    height = '100%',
     fill = '#699BF7',
     className,
 }: DefaultIconTypes) {

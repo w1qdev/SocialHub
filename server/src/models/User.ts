@@ -3,7 +3,7 @@ import mongoose, { Schema, Document } from 'mongoose';
 // Определение интерфейса для документа пользователя
 export interface UserDocument extends Document {
     username: string;
-    email: string;
+    phone: string;
     password: string;
     avatar?: {
         // Аватар пользователя (необязательное поле)
@@ -18,8 +18,8 @@ export interface UserDocument extends Document {
 // Определение схемы пользователя
 const UserSchema: Schema<UserDocument> = new Schema({
     username: { type: String, required: true },
-    email: { type: String, required: true },
     password: { type: String, required: true },
+    phone: { type: String, required: true },
     avatar: {
         data: { type: Buffer, required: false },
         contentType: { type: String, required: false },

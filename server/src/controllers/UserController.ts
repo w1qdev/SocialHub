@@ -42,26 +42,22 @@ class UserController {
 
     static async createUser(req: Request, res: Response) {
         try {
-            const { email, password } = req.body;
+            const { phone, password } = req.body;
 
-            if (!validateEmail(email) || !validatePassword(password)) {
-                return res
-                    .status(400)
-                    .json({
-                        message:
-                            'Ой, кажется Email не валидный или длина пароля меньше 8 символов',
-                    });
+            if (!validatePassword(password)) {
+                return res.status(400).json({
+                    message:
+                        'Ой, кажется Email не валидный или длина пароля меньше 8 символов',
+                });
             }
 
             const existingUser: UserDocument | null = await UserModel.findOne({
-                email,
+                phone,
             });
             if (existingUser) {
-                return res
-                    .status(400)
-                    .json({
-                        message: 'Пользователь с таким email уже существует',
-                    });
+                return res.status(400).json({
+                    message: 'Пользователь с таким email уже существует',
+                });
             }
 
             const hashedPassword: string = await bcrypt.hash(password, 10);
@@ -139,12 +135,10 @@ class UserController {
             const { newPassword } = req.body;
 
             if (!validatePassword(newPassword)) {
-                return res
-                    .status(400)
-                    .json({
-                        message:
-                            'Ой, кажется Email не валидный или длина пароля меньше 8 символов',
-                    });
+                return res.status(400).json({
+                    message:
+                        'Ой, кажется Email не валидный или длина пароля меньше 8 символов',
+                });
             }
 
             const existUser: UserDocument | null = await UserModel.findOne({

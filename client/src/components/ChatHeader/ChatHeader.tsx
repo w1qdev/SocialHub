@@ -7,7 +7,7 @@ export default function ChatHeader() {
                 <div className="content-avatar">
                     <img
                         src="https://i.pinimg.com/736x/0e/6a/d2/0e6ad287274d5bfb45a49e52f9c9a064.jpg"
-                        alt=""
+                        alt="user-avatar"
                     />
                 </div>
                 <div className="content-info">

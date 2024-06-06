@@ -1,11 +1,6 @@
 import { motion } from 'framer-motion';
 import './MessageContainer.scss';
-
-interface MessageContainerProps {
-    userId: string;
-    text: string;
-    time: string;
-}
+import { MessageContainerProps } from './MessageContainer.props';
 
 export default function MessageContainer({
     userId,

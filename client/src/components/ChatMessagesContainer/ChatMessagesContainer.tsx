@@ -1,11 +1,7 @@
 import './ChatMessagesContainer.scss';
 import MessageContainer from '../MessageContainer/MessageContainer';
 import { useRef, useEffect } from 'react';
-import { Message } from '../Chat/Chat';
-
-interface ChatMessagesContainerProps {
-    messagesList: Message[];
-}
+import { ChatMessagesContainerProps } from './ChatMessageContainer.props';
 
 export default function ChatMessagesContainer({
     messagesList,

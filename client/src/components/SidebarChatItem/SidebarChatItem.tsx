@@ -1,20 +1,27 @@
+import { Link } from 'react-router-dom';
 import './SidebarChatItem.scss';
+import { chatItem } from '../layout/Sidebar/Sidebar.props';
+import { motion } from 'framer-motion';
 
-export default function SidebarChatItem() {
+export default function SidebarChatItem({
+    chatId,
+    avatar,
+    title,
+    lastMessage,
+}: chatItem) {
     return (
-        <div className="chat__item">
-            <div className="chat__item-avatar">
-                <img
-                    src="https://i.pinimg.com/564x/d6/9b/32/d69b320501c2fa0019e1bb5c82dc4f30.jpg"
-                    alt="avatar"
-                />
-            </div>
-            <div className="chat__item-content">
-                <div className="chat__item-content-name">Название чата</div>
-                <div className="chat__item-content-last-message">
-                    chat last message
+        <motion.div>
+            <Link className="chat__item" to={`/chat/${chatId}`}>
+                <div className="chat__item-avatar">
+                    <img src={avatar} alt="avatar" />
                 </div>
-            </div>
-        </div>
+                <div className="chat__item-content">
+                    <div className="chat__item-content-name">{title}</div>
+                    <div className="chat__item-content-last-message">
+                        {lastMessage}
+                    </div>
+                </div>
+            </Link>
+        </motion.div>
     );
 }

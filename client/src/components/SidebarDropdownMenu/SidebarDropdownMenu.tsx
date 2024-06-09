@@ -1,7 +1,5 @@
 import { CreditCard, Keyboard, Settings, User } from 'lucide-react';
-
 import { Button } from '@/components/ui/button';
-
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -9,14 +7,9 @@ import {
     DropdownMenuItem,
     DropdownMenuLabel,
     DropdownMenuSeparator,
-    DropdownMenuShortcut,
     DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { ReactNode } from 'react';
-
-export interface SidebarDropdownMenuProps {
-    TriggerElement: ReactNode | string;
-}
+import { SidebarDropdownMenuProps } from './SidebarDropdownMenu.props';
 
 export default function SidebarDropdownMenu({
     TriggerElement,
@@ -29,6 +22,7 @@ export default function SidebarDropdownMenu({
             >
                 <Button variant="outline">{TriggerElement}</Button>
             </DropdownMenuTrigger>
+
             <DropdownMenuContent className="w-56 ml-3">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
